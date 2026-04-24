@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+      /* Background image */
+      background: url("dashboard_page.jpg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+h2 {
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+h2 span {
+  font-size: 14px;
+  font-weight: normal;
+  opacity: 0.9;
+}
+
+.btn {
+  display: block;
+  width: 250px;
+  margin: 10px auto;
+  padding: 15px;
+
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.2); /* transparent */
+  backdrop-filter: blur(10px);         /* blur effect */
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+   <h2>
+  Hi, Gerianna Arwen! <br>
+  <span>Welcome to something I made just for you ✉︎</span>
+</h2>
+
+    <button class="btn" onclick="goTo('gallery.html')">🎞 Our Memories</button>
+    <button class="btn" onclick="goTo('surprise.html')">𖠩 Birthday Special</button>
+    <button class="btn" onclick="goTo('message.html')">✉︎ Birthday Message</button>
+  </div>
+
+<script>
+  function goTo(page) {
+    let answer = prompt(getClue(page)); // show clue
+
+    if (checkAnswer(page, answer)) {
+      window.location.href = page;
+    } else if (answer !== null) {
+      alert("Wrong answer 😢 try again!");
+    }
+  }
+
+  function getClue(page) {
+    if (page === "gallery.html") {
+      return "Clue: first university we applied together? ";
+    }
+    if (page === "message.html") {
+      return "Clue: our favorite song ";
+    }
+    if (page === "surprise.html") {
+      return "Clue:  full name of the person we both relate to";
+    }
+  }
+
+  function checkAnswer(page, answer) {
+    if (!answer) return false;
+
+    answer = answer.toLowerCase();
+
+    if (page === "gallery.html" && answer === "university of the philippines") return true;
+    if (page === "surprise.html" && answer === "marc justin e. gonzales") return true;
+    if (page === "message.html" && answer === "bakit nga ba mahal kita") return true;
+
+    return false;
+  }
+</script>
+
+</body>
+</html>

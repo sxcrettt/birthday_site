@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surprise 💌</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("surprise_bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+      color: white;
+    }
+
+    /* Overlay (FIXED: no blocking clicks) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    /* GRID */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .person {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .person img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      transition: 0.3s;
+    }
+
+    .person img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
+    /* ACTIVE */
+    .person.active img {
+      box-shadow: 0 0 20px rgba(255,255,255,0.9);
+      transform: scale(1.1);
+    }
+
+    /* MESSAGE */
+    .message-box {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(12px);
+      border-radius: 10px;
+    }
+
+    .message-box p {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    /* 🔙 BACK BUTTON */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+
+      padding: 10px 15px;
+      border-radius: 50px;
+
+      border: 1px solid rgba(255,255,255,0.3);
+
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.1);
+      background: rgba(255,255,255,0.4);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔙 BACK BUTTON -->
+  <button class="back-btn" onclick="goDashboard()">⬅</button>
+
+  <h3>
+    Love Letter Collection 🤍 <br>
+    <span>Read the messages written by the people who loved you the most 💌</span>
+  </h3>
+
+  <div class="container">
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="arianne.webp">
+  <p>Arianne Joy</p>
+
+<div class="message-box">
+  <p>arwen,</p>
+
+  <p>salamat sa pagmamahal na hindi mahirap yakapin at sa pagkakaibigang hindi kailangang kwestyunin. nandito lamang ako sa lahat ng paraang kailangan mo ako, sa lahat ng paraang posible mo akong lapitan.</p>
+
+  <p>maligayang kaarawan! ang hiling ko ay sana mas maging mabait ka pa sa iyong sarili. mahal na mahal kita!</p>
+
+  <p>palagi,<br>ate arianne</p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="howard.jpg">
+  <p>James Howard</p>
+
+  <div class="message-box">
+    <p>Helur Arwin, HAPPIEST BIRTHDAY!!! Thank you for being a good friend and the best classmate for ST1201 kahit hirap na kami intindihin ang lesson nandyan ka para turuan kami para mapadali buhay namin HAHAHAHA chareng!. I mean para mapadali namin intindihin ang lesson thank you again and Happy Birthday!</p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="ashley.webp">
+  <p>Ashley</p>
+
+  <div class="message-box">
+    <p>HI ARWEN, HBD SANA WAG KA MUNA MAMATAY HEHEHE THANK U SA MGA ADVICE HEHE I DUNNO WHAT TO SAY WALA TALAGA AQ KWENTA SA GANITO. SO BLESSED NA NAGING KAIBIGAN KITA. ILY MWA MWA:33</p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="leigh.jpg">
+  <p>Sir Leigh</p>
+
+  <div class="message-box">
+    <p>Hi, Arwen!!!! Happy, happy birthday!</p>
+
+<p>just want to say thank you for being such an inspiration; I still look up to you up to now. You and your batchmates really set the bar waaaaay too high. Like, how can someone be both academically excellent and genuinely humble at the same time?</p>
+
+<p>really grateful you exist and that I got the chance to know you. Im so proud of you, as in!!!!!! Please dont ever change.</p>
+
+<p>to more book and bookstore recommendations! Loveyaaa 💗</p>
+
+<p>—Sir Leigh</p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="jed.jpg">
+  <p>Jed</p>
+
+  <div class="message-box">
+    <p>HAPPY HAPPY BIRTHDAY ARWEEEEN!!! THANK YOUUUU FOR BEING A GOOD GOOD FRIEND, I REALLY APPRECIATE HOW GENUINE AND SUPPORTIVE U ARE, I MISS OUR BOND TOGETHER SANA MAGKITA NA TAYOO 9 MONTHS NA OHHH, ANG PA BIRTHDAY KO AY SI ANO… ASES HAHAHAH HBD ULI PREEE ENJOYYY</p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="erha.jpg">
+  <p>Erha</p>
+
+  <div class="message-box">
+    <p>HII ARWEN, THANK U FOR BEING A GOOD FRIEND AND IM SO GRATEFUL TO HAVE U, HINDI BUO ANG 01 KUNG WALA KA, LIEK LEH IS GET, I MISS OUR BONDING. DE LAZOS NA ULIT PLEAZE PLEAZE, ALAM KO NAMAN NA HAPPY ANG IYONG BDAY BECAUSE OF JUSTIN HAHAHAHA, LOVE U ALWAYS GIRL!!!!!</p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="zeanne.jpg">
+  <p>Zeanne</p>
+
+  <div class="message-box">
+    <p>Happiest Birthday sa aming Arwen! You dont know how grateful I am to be a part of your life. Salamat sa pagiging guro sa ST1201 sa tuwing may quiz or malapit na ang exam. Hindi ko inakala na lalago pa ang bond natin during capstone days, and super duper special non para sa akin. Sana alam mo na maraming mga tao ang nagmamahal sayo—isa na ako doon. Nakakaproud and sobrang saya na matawag kitang kaibigan ko, happy birthday our Arwen! Mahal na mahal kita. ❤︎ </p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="samantha.jpg">
+  <p>Samantha Rose</p>
+
+  <div class="message-box">
+    <p>happy birthday super duper much sa mowdel ng st1201. grabe, tumatanda ka na. patuloy mo nawang ibandana ang flag ng st1201 sa iyong journey sa Chemistry. ikaw ang aming pride from District 1 ng Batangas. lumandi ka na kasi college na HAHAHAHAHA</p>
+
+<p>enjoy your bday, gbu, i miss u 😍</p>
+ </p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="renz.jpg">
+  <p>Renz Gabriel</p>
+
+  <div class="message-box">
+    <p>hbd arwen! mbtc ltfrb dswd dpwh</p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="justin.jpg">
+  <p>Marc Justin</p>
+
+  <div class="message-box">
+    <p>HI LOVER, HAPPY HAPPY BIRTHDAY! Thank you for always being an inspiration. Can't wait to see you again, enjoy your day, my love! </p>
+      
+    <p>I have prepared a poem for you:</p>
+    <p>Roses are red, Violets are blue, I wish I were there, so I can crack you. </p>
+  </div>
+</div>
+
+<div class="person" onclick="toggleMessage(this)">
+  <img src="mama.jpg">
+  <p>Mama</p>
+
+  <div class="message-box">
+    <p>" To my not so baby anymore Arwen, Happy Birthday my dearest. May the Lord's love and grace be with you always. Keep on shining anak ko. May all your dreams come true. I LOVE YOU my  little buchay😍. Mama will always be the proudest mom to you. Miss u na agad anak ko😍.. </p>
+  </div>
+</div>
+
+  <script>
+    let currentOpen = null;
+
+    function toggleMessage(element) {
+      const message = element.querySelector(".message-box");
+
+      if (currentOpen === message) {
+        message.style.display = "none";
+        element.classList.remove("active");
+        currentOpen = null;
+        return;
+      }
+
+      document.querySelectorAll(".message-box").forEach(m => {
+        m.style.display = "none";
+      });
+
+      document.querySelectorAll(".person").forEach(p => {
+        p.classList.remove("active");
+      });
+
+      message.style.display = "block";
+      element.classList.add("active");
+      currentOpen = message;
+    }
+
+    function goDashboard() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

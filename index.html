@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ♡</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+      /* Background image */
+      background: url("cover_page.jpg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      top: 0;
+      left: 0;
+    }
+
+    /* Login box */
+    .login-box {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      width: 280px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+     h2 {
+      white-space: nowrap;
+      font-size: 18px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff9aa2;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #ff6f91;
+    }
+
+    .hint {
+      font-size: 12px;
+      margin-top: 10px;
+      color: gray;
+    }
+
+    .login-box {
+  width: 320px;
+}
+
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* fade out */
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+  </style>
+</head>
+
+<body>
+
+  <div id="loader">
+  <h1>loading something special for you... </h1>
+</div>
+
+  <div class="login-box">
+    <h2>Only you can unlock this 𑣲</h2>
+
+    <input type="text" id="email" placeholder="Where">
+    <input type="password" id="password" placeholder="When">
+
+    <button onclick="login()">Unlock</button>
+
+    <p class="hint">Hint: Think of the day we first took our photobooth picture together, all lowercase ❤︎</p>
+  </div>
+
+  <script>
+    function login() {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      if (email === "life4cuts" && password === "08112024") {
+        alert("You got it ❤︎");
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Wrong clue ˙◠˙ try again!");
+      }
+    }
+
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+      loader.classList.add("fade-out");
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 1000);
+
+    }, 10000); // loading duration
+  });
+  </script>
+
+</body>
+</html>

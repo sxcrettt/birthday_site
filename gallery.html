@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Memories 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+
+      padding: 20px;
+    }
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+h1 span {
+  display: block;
+  font-size: 14px;     /* smaller text */
+  font-weight: normal; /* not bold */
+  margin-top: 5px;
+  opacity: 0.9;
+}
+    /* Container for scrapbook */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* Memory card */
+ .memory {
+  background: rgba(255, 255, 255, 0.2);  /* transparent */
+  backdrop-filter: blur(10px);            /* blur effect */
+  -webkit-backdrop-filter: blur(10px);    /* Safari support */
+
+  border-radius: 15px;
+  padding: 12px;
+  width: 220px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.memory:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.3);
+}
+
+.memory img {
+  width: 100%;
+  border-radius: 10px;
+}
+    .memory p {
+      font-size: 13px;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .back-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: white;
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+  </style>
+</head>
+
+<body>
+
+  <h1>Our Memories [◉°]<br>
+    <span>Let's reflect on the memories we've made together!</span>
+  </h1>
+
+  <div style="text-align:center; margin-bottom:20px;">
+  <button onclick="goBack()" class="back-btn">⬅ Back to Dashboard</button>
+</div>
+
+  <div class="gallery">
+
+    <div class="memory">
+      <img src="g1.jpg">
+      <p>graduation picture at sobrang proud ako sayo here!</p>
+    </div>
+
+    <div class="memory">
+      <img src="g2.jpg">
+      <p>first picture sa ipad mo</p>
+    </div>
+
+    <div class="memory">
+      <img src="g3.jpg">
+      <p>our first photobooth together after UPCAT</p>
+    </div>
+
+        <div class="memory">
+      <img src="g4.jpg">
+      <p>our first day of school sa PUP- and my last HAHA</p>
+    </div>
+
+        <div class="memory">
+      <img src="g5.jpg">
+      <p>National Youth Convention na nanalo ka ng tumbler</p>
+    </div>
+        <div class="memory">
+      <img src="g6.jpg">
+      <p>2024 Intramurals</p>
+    </div>
+    <div class="memory">
+      <img src="g7.jpg">
+      <p>teachers day na feeling close pa ako sayo</p>
+    </div>
+    <div class="memory">
+      <img src="g8.jpg">
+      <p>sinama ko lang kasi support tayo sa jowa mo</p>
+    </div>
+    <div class="memory">
+      <img src="g9.jpg">
+      <p>reunited with the gang, pero tayong dalawa lang kasi maganda hehe</p>
+    </div>
+        <div class="memory">
+      <img src="g10.jpg">
+      <p>my first day sa manila</p>
+    </div>
+    <div class="memory">
+      <img src="g11.jpg">
+      <p>random gala nung january</p>
+    </div>
+    <div class="memory">
+      <img src="g12.jpg">
+      <p>when u won essay does it and no. 1 supporter syempre</p>
+    </div>
+    <div class="memory">
+      <img src="g13.jpg">
+      <p>STI night</p>
+    </div>
+    <div class="memory">
+      <img src="g14.jpg">
+      <p>usual lunch out with the gang</p>
+    </div>
+    <div class="memory">
+      <img src="g15.jpg">
+      <p>i mean, our sexiest moment</p>
+    </div>
+    <div class="memory">
+      <img src="g16.jpg">
+      <p>StatusCope: Best Capstone</p>
+    </div>
+    <div class="memory">
+      <img src="g17.jpg">
+      <p>random picture from our cheerdance practice</p>
+    </div>
+    <div class="memory">
+      <img src="g18.jpg">
+      <p>last stem week w you guys</p>
+    </div>
+    <div class="memory">
+      <img src="g19.jpg">
+      <p>always your number 1 fan</p>
+    </div>
+    <div class="memory">
+      <img src="g20.jpg">
+      <p>before college gala, na di naman ako nagcollege after that HAHA</p>
+    </div>
+
+    <!-- Add more memory blocks below -->
+
+  </div>
+
+  <script>
+  function goBack() {
+    window.location.href = "dashboard.html";
+  }
+</script>
+
+</body>
+</html>

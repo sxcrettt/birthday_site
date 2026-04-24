@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You 💌</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+
+      /* Background image */
+      background: url("message_bg.jpg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Letter container */
+.letter {
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  backdrop-filter: blur(15px);           /* blur effect */
+  -webkit-backdrop-filter: blur(15px);   /* Safari support */
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+
+  padding: 30px;
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+    h2 {
+      margin-top: 0;
+    }
+
+    #text {
+      font-size: 15px;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    /* Scrollbar aesthetic */
+    .letter::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .letter::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🎵 Background Music -->
+<audio id="bg-music" loop>
+  <source src="birthdaysong.mp3" type="audio/mpeg">
+</audio>
+
+  <!-- 💌 Letter -->
+  <div class="letter">
+    <h2>Maligayang Kaarawan, Bes -`♡´-</h2>
+    <p id="text"></p>
+  </div>
+
+  <script>
+    const message = `habang ginagawa ko itong message na to para sayo, bes, hindi ko alam kung ano yung pinaka-tamang words na sasabihin ko. parang lahat na kasi nasabi ko na sayo before, pero gusto ko pa rin itong gawin para sayo kasi ikaw na yan eh. you are not just anyone in my life.
+
+ang dami kong “what ifs” para sa atin ngayong college. we were given a chance na magkasama ulit, pero hindi ko iyon natuloy, at hanggang ngayon, dala ko pa rin yung guilt na parang iniwan kita, kaya sorry bes kung hindi na ako nakapagpatuloy at hindi na kita nasamahan. pero kahit ganon, nakikita ko kung gaano ka kasaya ngayon na kahit nakakapagod at nakaka-burnout ang pag-aaral ay sobrang proud ako sayo kasi kahit mahirap, lumalaban ka at nagpapatuloy.
+
+gusto kong malaman mo na isa ka sa pinaka-magandang nangyari sa buong senior high life ko. hindi lang basta memory, kundi bahagi ka ng growth ko. ang dami kong natutunan sayo na hanggang ngayon dala-dala ko pa rin. i cant imagine my senior high journey without you in it. pareho tayong galing sa hindi magagandang experiences sa past schools natin, pero siguro nga blessing in disguise na pinagtagpo tayo—para mag-heal, para magsimula ulit, at para baguhin yung mga sarili natin at masasabi ko na nabago mo ako, bes.
+
+alam mo, hindi talaga ako yung tipo ng kaibigan na sobrang nag-eeffort. parang bare minimum lang lagi. pero nung dumating ka sa buhay ko, everything changed. hindi ko alam kung paano nangyari, pero bigla akong naging willing gawin lahat para sayo. kasi sa lahat ng naibigay mong kabutihan at pagmamahal sakin, feel ko you deserve so much more. and hanggang ngayon, hindi ako napapagod ibigay kung ano yung kaya ko para mapasaya ka.
+
+kaya eto, hindi ko talaga alam kung anong perfect na regalo para sayo. first, feeling ko sobrang unique at ganda ng mga binigay mo sakin before, at parang hindi ko pa yon nasusuklian and sorry na bes hehe. pangalawa, parang lahat ng kaya kong ibigay, meron ka na rin so negative. kaya naisip ko, gumawa na lang ako ng something na nakakarelate tayo pareho at simple web design yun since isa to sa part ng capstone natin nung senior high tayo and best capstone yasss. alam ko bes hindi ito perfect and hindi rin ito yung most professional web na nakita mo, parang PPT lang tbh eh, pero ginawa ko to with all my effort and love. sana kahit papaano, maramdaman mo kung gaano ka ka-special sakin. at promise, babawi ako—mas gagaling pa ako, mas gaganda pa yung mga gagawin ko para sayo.
+
+gaya ng sinabi mo sakin dati, ikaw din yung taong hinahanap ko palagi. at kahit magkalayo man tayo ngayon, naniniwala ako na hindi matatapos yung kwento natin dito. tadhana na bahala sa atin at sigurado ako, pagtatagpuin niya ulit tayo para gumawa pa ng mas maraming masasayang alaala.
+
+At kung darating man yung panahon na pareho na tayong magiging sobrang busy sa ating piniling buhay, magkakaroon ng bagong mga kaibigan, o mapupunta sa magkaibang mundo, sana huwag mong kakalimutan na may isang taong palaging babalik sayo—at ako yon. kahit gaano katagal tayong hindi mag-usap, kahit gaano kalayo ang pagitan natin, hindi magbabago yung lugar mo sa buhay ko, lasi hindi ka lang basta kaibigan para sakin, you are my home in a person. at kahit anong mangyari, pipiliin pa rin kitang balikan, piliin, at mahalin bilang best friend ko—again and again.
+
+happy 19th birthday, bes! Ⰶ
+sana kahit simpleng message at munting effort ko na to, napasaya kita—even just for a moment kasi deserve mo lahat ng happiness sa mundo, at higit pa doon.
+
+mahal na mahal kita, bes. hinding-hindi ako magsasawang ipaalala sayo na andito lang ako palagi—sa lahat ng ups and downs mo. i will always be your number one fan, your safe place, and your person.
+
+kahit saan ka dalhin ng buhay, lagi mong tandaan—may isang taong sobrang proud sayo hanggang nandito ako.❤︎
+
+nagmamahal, jay ar.`;
+
+    let i = 0;
+    const speed = 60; // typing speed
+
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("text").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.addEventListener("click", function () {
+  const music = document.getElementById("bg-music");
+  if (music) {
+    music.play();
+  }
+}, { once: true });
+
+    window.onload = typeWriter;
+  </script>
+
+</body>
+</html>
