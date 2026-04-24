@@ -27,12 +27,14 @@ h1 span {
   opacity: 0.9;
 }
     /* Container for scrapbook */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+  justify-items: center;
+}
 
     /* Memory card */
  .memory {
@@ -90,6 +92,17 @@ h1 span {
   position: fixed;
   top: 20px;
   left: 20px;
+}
+    @media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
   </style>
 </head>
